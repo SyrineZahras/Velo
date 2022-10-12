@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/animate.css">
+
         <!--Google Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -31,6 +32,10 @@
        <!--Section About-->
        @include('FrontEnd.About')
        <!--end of About-->
+
+       <!--Section Associations-->
+       @include('FrontEnd.Associations')
+       <!--end of Associations-->
 
        <!--Performers Section-->
        @include('FrontEnd.Performers')
