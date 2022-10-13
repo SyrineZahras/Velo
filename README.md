@@ -65,7 +65,7 @@ This is the official Velo App documentation <br/>
  ### 📜 Project Main features
 1. **:bike: Bikes Management** 
 2. **:euro: Bike Rentals Management**
-3. **:reminder_ribbon: Bike Associations Management** 
+3. **📣: Bike Associations Management** 
 4. **:bicyclist: Bike Rides Management**
 5. **:flags: Bike Events Management** 
 6. **🙋 Users Management** 
