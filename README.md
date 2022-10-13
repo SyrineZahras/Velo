@@ -137,12 +137,12 @@ _In order to install the app you need to follow the instructions below :_
    
 8. Migrate the database
    ```sh
-   php composer migrate
+   php artisan migrate
    ```
    
 9. Run the server on 
    ```sh
-   php composer serve
+   php artisan serve
    ```
 10. Open localhost:8000 in the browser and that's it you can enjoy the project 🎉!
 
