@@ -42,7 +42,9 @@ class AssociationController extends Controller
             'localisation'          =>  'required',
             'description'          =>  'required',
             'responsable'         =>  'required',
-            'image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
+            'image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            'g-recaptcha-response' => 'required|captcha' 
+
         ]);
 
         $file_name = time() . '.' . request()->image->getClientOriginalExtension();
@@ -136,4 +138,6 @@ class AssociationController extends Controller
 
         return redirect()->route('associations.index')->with('success', 'Association Data deleted successfully');
     }
+
+    
 }
