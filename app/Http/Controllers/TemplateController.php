@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class TemplateController extends Controller
 {
     public function index() {
-        return view('FrontEnd.master');
+        return view('backend.master');
     }
+
+    public function frontend() {
+        return view('frontend.master');
+    }
+
+    public function login() {
+        return redirect()->route('login');
+    }
+
 }
