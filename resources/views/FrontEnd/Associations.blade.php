@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-
-<bdy>
 <section id="associations">
 <div class="container">
 
@@ -142,7 +136,4 @@
   </div>
 
     </section>
-    <br/>
-
-</bdy>
-    </html>
+<br/><br/>

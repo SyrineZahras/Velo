@@ -1,42 +1,62 @@
-<section id="about">
-          
-           <div class="section-about">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-12 wow bounceIn">
-                          <h2 class="section-title">About Biking</h2>
-                          <p class="under-heading">Take A Look at some Features</p>
-                      </div>
+<section class="section section-lg bg-default padding-top-0 position-relative" id="about">
+        <div class="container container-relative">
+          <div class="row row-50">
+            <div class="col-lg-6 wow-outer">
+              <div
+                class="wow slideInLeft"
+                style="visibility: visible; animation-name: slideInLeft"
+              >
+                <div class="block-decorate-img-modern block-decorate-img">
+                  <div class="block-decorate-inner">
+                    <img
+                      src="img/home-3-1-500x327.jpg"
+                      alt=""
+                      width="500"
+                      height="327"
+                    />
                   </div>
+                </div>
               </div>
-               <div class="section-wrapper">
-                   <div class="container">
-               <div class="row">
-                   <div class="col-md-4 wow bounceInDown">
-                       
-                           <a href="#"><i class="fa fa-user fa-5x square"></i></a>
-                           <h3 class="heading">Performers</h3>
-                           <p class="col-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus excepturi non modi quo iusto aut in nisi, esse provident!</p>
-                   </div>
-                       
-                    <div class="col-md-4 wow bounceInDown">
-                       
-                           <a href="#"><i class="fa fa-bicycle fa-5x"></i></a>
-                           <h3 class="heading">Sport</h3>
-                           <p class="col-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus excepturi non modi quo iusto aut in nisi, esse provident!</p>
-                           
-                    </div>
-                      
-                    <div class="col-md-4 wow bounceInRight">
-                       
-                           <a href="#"><i class="fa fa-location-arrow fa-5x"></i></a>
-                           <h3 class="heading">Campaign</h3>
-                           <p class="col-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus excepturi non modi quo iusto aut in nisi, esse provident!</p>
-                       
-                    </div>
-               </div>
-           </div>
-               </div>
-           </div>
-           
-       </section>
+            </div>
+            <div class="col-lg-6 wow-outer">
+              <div
+                class="wow slideInRight"
+                style="visibility: visible; animation-name: slideInRight"
+              >
+                <div class="block-md">
+                  <h3>About Our Cycling Club</h3>
+                  <p class="custom-offset">
+                    The ClubArea Cycling Club was founded in 1999 and promotes
+                    safe cycling practices, physical achievement, and the social
+                    benefits of group cycling.
+                  </p>
+                  <p>
+                    Our club offers group rides for cyclists of all abilities
+                    several days a week in the Spring, Summer, and Fall.
+                    Disciplines include road &amp; mountain biking and
+                    cyclocross. We have rides that are perfect for any level and
+                    skill.
+                  </p>
+                  <a class="button button-primary button-lg-custom" href="#"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cross-wrap cross-4"
+          data-parallax-scroll='{"y": -100, "x": 0,  "smoothness": 60 }'
+          style="
+            transform: translate3d(0px, -89.111px, 0px) rotateX(0deg)
+              rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+            -webkit-transform: translate3d(0px, -89.111px, 0px) rotateX(0deg)
+              rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+          "
+        >
+          <div class="cross">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>

@@ -2,7 +2,6 @@
             <div class="section-timeline">
                 <div class="container">
                     <h2 class="heading">Our<span class="bold-green"> Timeline</span></h2>
-                    <p class="lead under-heading text-center">Look at our timer</p>
                     <ul class="timeline">
                         <li>
                             <div class="timeline-badge"><span class="counteryear">2016</span></div>

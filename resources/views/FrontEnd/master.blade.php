@@ -6,18 +6,24 @@
         </title>
         <meta charset="utf-8">
         <!--CSS-->
-        
+        <link rel="icon" href="img/fav.ico" type="image/x-icon" />
+
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/style1.css" />
 
         <!--Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CRoboto:400"
+    />
     </head>
     <body>
-       <header class="header" id="HOME">
+       <header id="HOME">
 
        <!-- Navigation -->
        @include('FrontEnd.Navigation')
@@ -33,13 +39,19 @@
        @include('FrontEnd.About')
        <!--end of About-->
 
+
+
        <!--Section Associations-->
        @include('FrontEnd.Associations')
        <!--end of Associations-->
-
+       
        <!--Performers Section-->
        @include('FrontEnd.Performers')
        <!--End of Performers-->
+
+       <!--Section Timeline-->
+        @include('FrontEnd.Events')
+       <!--end of Timeline-->
 
        <!--Section Timeline-->
        @include('FrontEnd.Timeline')
@@ -81,6 +93,8 @@
         <script src="js/jquery.waypoints.min.js"></script>
         <script src="js/jquery.nicescroll.min.js"></script>
         <script src="js/wow.min.js"></script>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
         <script>new WOW().init();</script>
     </body>
 </html>

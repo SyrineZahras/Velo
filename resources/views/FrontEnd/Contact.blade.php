@@ -34,20 +34,6 @@
                         </div>
                         </form>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="social-icons wow slideInDown">
-                                    <ul class="list-unstyled">
-                                        <li><a href="#"><i class="fa fa-facebook fa-3x"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus fa-3x"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram fa-3x"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
