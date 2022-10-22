@@ -155,7 +155,12 @@ _In order to install the app you need to follow the instructions below :_
 <!-- USAGE EXAMPLES -->
 ## ⚡ Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+| <img src="https://user-images.githubusercontent.com/78981558/197310444-1b40236d-133c-43ee-8816-79d5446f5e7b.png" width="900" height="300"/><br> **Login Page**| <img src="https://user-images.githubusercontent.com/78981558/197310451-d6272ef4-6c80-4dcb-80b1-212f608eb89f.png" width="900" height="300"/>  <br>**Register Page**| 
+| ------------- | ------------- | 
+| <img src="https://user-images.githubusercontent.com/78981558/197310603-ad1652dc-8424-4762-9957-cd6bf6b3261a.png" width="900" height="300"/><br> **Forget Password Page**| <img src="https://user-images.githubusercontent.com/78981558/197310609-5aab1819-bd01-4af6-ac0e-0d64e5339bee.png" width="900" height="300"/>  <br>**Home Page**| 
+| <img src="https://user-images.githubusercontent.com/78981558/197310419-c5d6f454-ca2a-48a9-a19a-d6e1ffb6c35c.png" width="900" height="300"/><br> **Dashboard**| <img src="https://user-images.githubusercontent.com/78981558/197310481-ab1a35db-f23a-4ba6-bd5a-73f7e7a30888.png" width="900" height="300"/>  <br>**User Profile Page**| 
+| <img src="https://user-images.githubusercontent.com/78981558/197310463-8ec54d51-e8c7-479d-bf0e-c5671ee82b6a.png" width="900" height="300"/><br> **Rides Management**| <img src="https://user-images.githubusercontent.com/78981558/197310466-6c44e8f7-febc-4521-b14d-0779328d667d.png" width="900" height="300"/>  <br>**Rides Tracking**| 
+| <img src="https://user-images.githubusercontent.com/78981558/197310470-6b4b4f36-19a4-437d-8815-6b23176d424a.png" width="900" height="300"/><br> **Rides Tracking - 1**| <img src="" width="20" height="20"/>  <br>**In progress**| 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
