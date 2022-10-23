@@ -23,7 +23,7 @@ transition: transform .1s;
 
     <div class="alert alert-success">
     </div><br />
-    <a href="{{ route('bikes.create') }}" class="btn btn-md btn-success mb-3">Ajouter vélo</a>
+    <a href="#"data-toggle="modal" data-target="#ModalCreate" class="btn btn-md btn-success mb-3">Ajouter vélo</a>
 
   <table class="table table-striped">
 
@@ -43,18 +43,27 @@ transition: transform .1s;
             <td>{{$bike->prix}}</td>
             <td><img src="{{ Storage::url('public/veloImg/').$bike->imageUrl }}" class="rounded img" style="width: 60px;border-radius:5%" ></td>
 
-            <td><a href="{{ route('bikes.edit', $bike->id) }}" class="btn btn-primary">Modifier</a></td>
             <td>
-            <form onsubmit="return confirm('Are you sure you want to delete {{$bike->marque}} ?');" action="{{ route('bikes.destroy', $bike->id) }}" method="POST">
+              <a href="#" data-toggle="modal" data-target="#ModalUpdate{{$bike->id}}" class="btn btn-primary">Modifier</a>
+            <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#ModalDelete{{$bike->id}}">Supprimer</a>
+</td>
+            <td>
+
+            <!-- <form onsubmit="return confirm('Are you sure you want to delete {{$bike->marque}} ?');" action="{{ route('bikes.destroy', $bike->id) }}" method="POST">
                                              @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">DELETE</button>
-</form>
+</form> -->
             </td>
         </tr>
+        @include('backend.velo.delete')
+
+        @include('backend.velo.update')
+
         @endforeach
     </tbody>
   </table>
 <div>
+@include('backend.velo.create')
 
 @endsection

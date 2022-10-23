@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bike;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BikeController extends Controller
 {
@@ -26,7 +27,7 @@ class BikeController extends Controller
      */
     public function create()
     {
-        return view('backend.velo.createBike');
+        return view('backend.velo.index');
     }
     /**
      * Store a newly created resource in storage.
@@ -45,7 +46,7 @@ class BikeController extends Controller
         $imageUrl = $request->file('imageUrl');
         $imageUrl->storeAs('public/veloImg', $imageUrl->hashName());
 
-        $blog = Bike::create([
+        $bike = Bike::create([
             'imageUrl'     => $imageUrl->hashName(),
             'marque'     => $request->marque,
             'vitesse'     => $request->vitesse,
@@ -59,7 +60,7 @@ class BikeController extends Controller
 
         ]);
 
-        if($blog){
+        if($bike){
             //redirect dengan pesan sukses
             return redirect()->route('bikes.index')->with(['success' => 'Data Berhasil Disimpan!']);
         }else{
@@ -99,7 +100,54 @@ class BikeController extends Controller
      */
     public function update(Request $request, Bike $bike)
     {
-        //
+        
+        $bike = Bike::findOrFail($bike->id);
+        $b=$bike->imageUrl;
+        if($request->file('imageUrl') == "") {
+
+            $bike->update([
+                'marque'     => $request->marque,
+            'vitesse'     => $request->vitesse,
+            'type'     => $request->type,
+            'etat'     => $request->etat,
+            'couleur'     => $request->couleur,
+            'taille'     => $request->taille,
+            'prix'     => $request->prix,
+            'quantite'     => $request->quantite,
+            ]);
+
+        } else {
+            error_log('PAATH****');
+            error_log($b);
+
+            //hapus old image
+            Storage::disk('local')->delete('public/veloImg/'.$b);
+
+            //upload new image
+            $imageUrl = $request->file('imageUrl');
+            $imageUrl->storeAs('public/veloImg', $imageUrl->hashName());
+
+            $bike->update([
+                'imageUrl'     => $imageUrl->hashName(),
+                'marque'     => $request->marque,
+                'vitesse'     => $request->vitesse,
+                'type'     => $request->type,
+                'etat'     => $request->etat,
+                'couleur'     => $request->couleur,
+                'taille'     => $request->taille,
+                'prix'     => $request->prix,
+                'quantite'     => $request->quantite,
+            ]);
+            
+        }
+
+        if($bike){
+            //redirect dengan pesan sukses
+            return redirect()->route('bikes.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('bikes.index')->with(['error' => 'Data Gagal Diupdate!']);
+        }
     }
 
     /**
@@ -111,6 +159,7 @@ class BikeController extends Controller
     public function destroy($id)
     {
         $bike = Bike::findOrFail($id);
+        Storage::disk('local')->delete('public/veloImg/'.$bike->imageUrl);
         $bike->delete();
 
         if($bike){
