@@ -5,6 +5,20 @@
 
 
 <style>
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #C2C5CE;}
+
   .uper {
     margin-top: 40px;
   }
@@ -23,13 +37,14 @@ transition: transform .1s;
 
     <div class="alert alert-success">
     </div><br />
-    <a href="#"data-toggle="modal" data-target="#ModalCreate" class="btn btn-md btn-success mb-3">Ajouter vélo</a>
+    <a href="#"data-toggle="modal" data-target="#ModalCreate" class="btn btn-md mb-3"style="background-color:#4e73df;color:white">Ajouter vélo</a>
 
-  <table class="table table-striped">
+  <table class="table ">
 
     <thead>
         <tr>
           <td>Marque</td>
+          <td>Type</td>
           <td>Prix</td>
           <td>Image</td>
           <td colspan="2">Action</td>
@@ -40,12 +55,16 @@ transition: transform .1s;
         @foreach($bikes as $bike)
         <tr>
             <td>{{$bike->marque}}</td>
+            <td>{{$bike->type}}</td>
+
             <td>{{$bike->prix}}</td>
             <td><img src="{{ Storage::url('public/veloImg/').$bike->imageUrl }}" class="rounded img" style="width: 60px;border-radius:5%" ></td>
 
             <td>
-              <a href="#" data-toggle="modal" data-target="#ModalUpdate{{$bike->id}}" class="btn btn-primary">Modifier</a>
-            <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#ModalDelete{{$bike->id}}">Supprimer</a>
+              <a href="#" data-toggle="modal" data-target="#ModalUpdate{{$bike->id}}" class="btn"><i class='fas fa-edit'></i>
+</a>
+            <a href="#" class="btn"  data-toggle="modal" data-target="#ModalDelete{{$bike->id}}"><i class='fas fa-trash-alt'style='color:red'></i>
+</a>
 </td>
             <td>
 
@@ -64,6 +83,10 @@ transition: transform .1s;
     </tbody>
   </table>
 <div>
+<div style="margin-left:30%">
+{!! $bikes->withQueryString()->links('pagination::bootstrap-5') !!}
+</div>
+
 @include('backend.velo.create')
 
 @endsection

@@ -15,7 +15,7 @@ class BikeController extends Controller
      */
     public function index()
     {
-        $bikes = Bike::all();
+        $bikes = Bike::paginate(5);
 
         return view('backend.velo.index',compact("bikes"));
     }
