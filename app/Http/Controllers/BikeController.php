@@ -108,8 +108,18 @@ class BikeController extends Controller
      * @param  \App\Models\Bike  $bike
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bike $bike)
+    public function destroy($id)
     {
-        //
-    }
+        $bike = Bike::findOrFail($id);
+        $bike->delete();
+
+        if($bike){
+            //redirect dengan pesan sukses
+            return redirect()->route('bikes.index')->with(['success' => 'Supprimé avec succées!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('bikes.index')->with(['error' => 'Erreur']);
+        }
+    }    
 }
+
