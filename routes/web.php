@@ -43,7 +43,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])
 
             Route::get("stripe", [StripePaymentController::class, "stripe"]);
             //Route::get('stripe', 'StripePaymentController@stripe');
-            Route::post("stripe", [StripePaymentController::class , "stripePost"])->name('stripe.post');
+            Route::post("stripe/{bill}", [StripePaymentController::class , "stripePost"])->name('stripe.post');
             //Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
             
 

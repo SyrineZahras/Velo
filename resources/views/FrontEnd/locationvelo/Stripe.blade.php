@@ -25,41 +25,12 @@
 <body>
   
 <div class="container">
-  
-<div class="row mt-5">
-    <div class="col-md-6 col-xl-4">
-      <x-card class="mb-3">
-        <x-slot name="header">
-          <x-headline class="h6 mb-0">
-            <x-link class="text-body" text="Card Header Headline" href="#"/>
-          </x-headline>
-        </x-slot>
-
-        <x-slot name="image">
-          <x-image class="card-img rounded-0" src="https://via.placeholder.com/253x169" :width="[253]" :height="[169]"/>
-        </x-slot>
-
-        <x-slot name="body">
-          <x-headline class="h5">
-            <x-link text="Card Body Headline" href="#"/>
-          </x-headline>
-        </x-slot>
-
-        <x-slot name="footer">
-          card Footer Text
-        </x-slot>
-      </x-card>
-    </div>
-
-    <div class="col-md-6 col-xl-4">
-      <x-card :all="$card" class="mb-3" :image="['width' => [253], 'height' => [169]]" :footer="['hide' => true]"/>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <x-card :all="$card" class="mb-3" :image="['width' => [253], 'height' => [169]]" :header="['hide' => true]"/>
-    </div>
-  </div>
-<h2>{{$bill}}</h2>
-  
+    <h1>Bill</h1>
+    <h3>Your name :{{$location->username}}</h3>
+    <h3>Your mail :{{$location->usermail}}</h3>
+    <h3>Your phone :{{$location->userphone}}</h3>
+    <h3>Amount to pay: {{$bill->amount}}</h3>
+    <h3>Status : {{$bill->status}}</h3>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default credit-card-box">
@@ -80,7 +51,7 @@
                         </div>
                     @endif
   
-                    <form role="form" action="{{ route('stripe.post') }}" method="post" class="require-validation"
+                    <form role="form" action="{{ route('stripe.post', ['bill' => $bill->id]) }}" method="post" class="require-validation"
                                                      data-cc-on-file="false"
                                                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                                                     id="payment-form">
@@ -128,7 +99,7 @@
   
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now {{$bill->amount}} $</button>
                             </div>
                         </div>
                           

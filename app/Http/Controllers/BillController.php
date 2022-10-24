@@ -14,7 +14,8 @@ class BillController extends Controller
     public function show(Bill $bill)
     {
         $bill = Bill::find($bill->id);
-        return view('FrontEnd.locationvelo.stripe',compact("bill"));
+        $location = LocationVelo::find($bill->location_id);
+        return view('FrontEnd.locationvelo.stripe',compact("bill","location"));
     }
     //
     public function store(LocationVelo $location)

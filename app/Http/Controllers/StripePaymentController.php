@@ -1,7 +1,7 @@
 <?php
    
 namespace App\Http\Controllers;
-   
+use App\Models\Bill;
 use Illuminate\Http\Request;
 use Session;
 use Stripe;
@@ -23,14 +23,15 @@ class StripePaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function stripePost(Request $request)
+    public function stripePost(Request $request ,Bill $bill)
     {
+        //$bills = Bill::find($bill->id);
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
-                "amount" => 100 * 100,
+                "amount" =>$bill->amount *100,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
-                "description" => "Test payment from itsolutionstuff.com." 
+                "description" => "Test payment" 
         ]);
   
         Session::flash('success', 'Payment successful!');
