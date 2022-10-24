@@ -24,6 +24,7 @@ Route::get("/",[TemplateController::class,"login"]);
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])
       ->group(function () {
             Route::resource('/bikes',\App\Http\Controllers\BikeController::class);
+            Route::resource('/options',\App\Http\Controllers\OptionBikeController::class);
             Route::resource('dashboard', DashboardController::class);
             Route::resource('associations', AssociationController::class);
             Route::resource('rides', RideController::class);

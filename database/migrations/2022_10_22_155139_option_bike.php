@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('optionbikes');
+        Schema::dropIfExists('option_bikes');
 
-        Schema::create('optionbikes', function (Blueprint $table) {
+        Schema::create('option_bikes', function (Blueprint $table) {
             $table->id();
             $table->string('imageUrl');
             $table->string('option');
             $table->string('couleur');
             $table->string('type');
             $table->string('prix');
-            $table->integer('bike_id');
+            $table->integer('bike_id')->unsigned()->index()->nullable();
             $table->foreign('bike_id')->references('id')->on('bikes');
             $table->timestamps();
         });    }

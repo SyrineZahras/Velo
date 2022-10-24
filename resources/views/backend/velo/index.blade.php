@@ -5,7 +5,11 @@
 
 
 <style>
-
+#cercle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -35,8 +39,7 @@ transition: transform .1s;
 
 <div class="uper">
 
-    <div class="alert alert-success">
-    </div><br />
+  
     <a href="#"data-toggle="modal" data-target="#ModalCreate" class="btn btn-md mb-3"style="background-color:#4e73df;color:white">Ajouter vélo</a>
 
   <table class="table ">
@@ -44,6 +47,8 @@ transition: transform .1s;
     <thead>
         <tr>
           <td>Marque</td>
+          <td>Couleur</td>
+
           <td>Type</td>
           <td>Prix</td>
           <td>Image</td>
@@ -55,6 +60,8 @@ transition: transform .1s;
         @foreach($bikes as $bike)
         <tr>
             <td>{{$bike->marque}}</td>
+            <td><div id="cercle" style="background:{{ $bike->couleur}}"></div></td>
+
             <td>{{$bike->type}}</td>
 
             <td>{{$bike->prix}}</td>

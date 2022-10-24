@@ -48,8 +48,13 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">Type</label>
-                                <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type', $bike->type) }}" placeholder="type">
-                            
+                                <!-- <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type', $bike->type) }}" placeholder="type"> -->
+                                <select class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type', $bike->type) }}" >
+                                    <option value="Tout chemin">Tout chemin</option>
+                                    <option value="Sport">Sport </option>
+                                    <option value="cargo">cargo </option>
+
+                                </select>
                                 <!-- error message untuk title -->
                                 @error('type')
                                     <div class="alert alert-danger mt-2">
@@ -70,7 +75,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">Couleur</label>
-                                <input type="text" class="form-control @error('couleur') is-invalid @enderror" name="couleur" value="{{ old('couleur', $bike->couleur) }}" placeholder="couleur">
+                                <input type="color" class="form-control @error('couleur') is-invalid @enderror" name="couleur" value="{{ old('couleur', $bike->couleur) }}" placeholder="couleur">
                             
                                 <!-- error message untuk title -->
                                 @error('couleur')

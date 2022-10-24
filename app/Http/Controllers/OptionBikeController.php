@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OptionBike;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OptionBikeController extends Controller
 {
@@ -14,7 +15,9 @@ class OptionBikeController extends Controller
      */
     public function index()
     {
-        //
+        $options = OptionBike::paginate(5);
+
+        return view('backend.optionvelo.index',compact("options"));
     }
 
     /**
@@ -35,8 +38,27 @@ class OptionBikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $imageUrl = $request->file('imageUrl');
+        $imageUrl->storeAs('public/veloImg', $imageUrl->hashName());
+
+        $option = OptionBike::create([
+            'imageUrl'     => $imageUrl->hashName(),
+            'option'     => $request->option,
+            'type'     => $request->type,
+            'couleur'     => $request->couleur,
+            'prix'     => $request->prix,
+
+
+
+        ]);
+
+        if($option){
+            //redirect dengan pesan sukses
+            return redirect()->route('options.index')->with(['success' => 'Ajouté avec succées!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('options.index')->with(['error' => 'Erreur!']);
+        }    }
 
     /**
      * Display the specified resource.
@@ -67,9 +89,47 @@ class OptionBikeController extends Controller
      * @param  \App\Models\OptionBike  $optionBike
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OptionBike $optionBike)
+    public function update(Request $request, OptionBike $option)
     {
-        //
+        $option = OptionBike::findOrFail($option->id);
+        $b=$option->imageUrl;
+        if($request->file('imageUrl') == "") {
+
+            $option->update([
+                'option'     => $request->option,
+                'type'     => $request->type,
+                'couleur'     => $request->couleur,
+                'prix'     => $request->prix,
+            ]);
+
+        } else {
+            error_log('PAATH****');
+            error_log($b);
+
+            //hapus old image
+            Storage::disk('local')->delete('public/veloImg/'.$b);
+
+            //upload new image
+            $imageUrl = $request->file('imageUrl');
+            $imageUrl->storeAs('public/veloImg', $imageUrl->hashName());
+
+            $option->update([
+                'imageUrl'     => $imageUrl->hashName(),
+                'option'     => $request->option,
+                'type'     => $request->type,
+                'couleur'     => $request->couleur,
+                'prix'     => $request->prix,
+            ]);
+            
+        }
+
+        if($option){
+            //redirect dengan pesan sukses
+            return redirect()->route('options.index')->with(['success' => 'Modifier avec succées!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('options.index')->with(['error' => 'Erreur!']);
+        }
     }
 
     /**
@@ -78,8 +138,18 @@ class OptionBikeController extends Controller
      * @param  \App\Models\OptionBike  $optionBike
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OptionBike $optionBike)
+    public function destroy($optionBike)
     {
-        //
+        $option = OptionBike::findOrFail($optionBike);
+        Storage::disk('local')->delete('public/veloImg/'.$option->imageUrl);
+        $option->delete();
+
+        if($option){
+            //redirect dengan pesan sukses
+            return redirect()->route('options.index')->with(['success' => 'Supprimé avec succées!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('options.index')->with(['error' => 'Erreur']);
+        }
     }
 }
