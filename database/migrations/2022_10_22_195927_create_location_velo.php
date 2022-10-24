@@ -13,19 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('optionbikes');
+        Schema::dropIfExists('location_velo');
 
-        Schema::create('optionbikes', function (Blueprint $table) {
+        Schema::create('location_velos', function (Blueprint $table) {
             $table->id();
-            $table->string('imageUrl');
-            $table->string('option');
-            $table->string('couleur');
-            $table->string('type');
-            $table->string('prix');
+            $table->string('username');
+            $table->string('usermail');
+            $table->string('userphone');
+            $table->dateTime('startDate');
+            $table->integer('duration');
             $table->bigInteger('bike_id')->unsigned()->index()->nullable();
             $table->foreign('bike_id')->references('id')->on('bikes')->onDelete('cascade');
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-        });    }
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -34,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('location_velo');
     }
 };

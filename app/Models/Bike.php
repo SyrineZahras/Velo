@@ -13,6 +13,7 @@ class Bike extends Model
      *
      * @var array
      */
+    protected $primaryKey = 'id';
     protected $fillable = [
         'imageUrl',
         'marque' ,
@@ -25,5 +26,9 @@ class Bike extends Model
         'quantite'    ];
     public function optionBikes(){
         return $this->hasMany(OptionBike::class);
+    }
+    public function LocationVelo()
+    {
+        return $this->HasMany(LocationVelo::class);
     }
 }
