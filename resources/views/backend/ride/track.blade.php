@@ -31,7 +31,7 @@
             <div class="card-body">   
                 Status : <span class="badge badge-info badge-pill"> {{ $row->status}}</span>
                 <br/>
-                {{$row -> association_id}}
+               
             </div>
         </div>
         @endforeach
@@ -153,7 +153,7 @@ function print(id) {
                 maxZoom: 18
             }).addTo(map);
 
-    
+
 
             $(function(){
 
@@ -168,7 +168,7 @@ function print(id) {
                     console.log( getIcon(track['status']));
                     console.log(key);
                     L.marker( [track['lat'],track['lng']],{icon: getIcon(track['status'])} )
-                     .bindPopup( `<b>Longtitude :</b>${track['lng']}  <br/>  <b> Latitude </b>  ${track['lat']} <br/> <br/><div style="text-align:center;"> <button type="button" onclick="print(${track['id']})" class="edit btn btn-outline-secondary btn-pills waves-effect waves-themed" >View Tracking</button></div>` )
+                     .bindPopup( `<b>Ride n°:</b>${track['id']}  <br/><b>Longtitude :</b>${track['lng']}  <br/>  <b> Latitude </b>  ${track['lat']} <br/> <br/><div style="text-align:center;"> <button type="button" onclick="print(${track['id']})" class="edit btn btn-outline-secondary btn-pills waves-effect waves-themed" >View Tracking</button></div>` )
                      .on('click', function (e) {
                      map.flyTo([track['lat'],track['lng']], 10) }).addTo(map);
                 })

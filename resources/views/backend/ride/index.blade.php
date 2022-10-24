@@ -56,15 +56,14 @@
                         <td>{{ $row->lng }}</td>
                         <td>{{ $row->lat }}</td>
                         <td>	
-						    <a href="{{ route('rides.show', $row->id) }}" class="btn btn-info btn-circle ">
-                                        <i class="fas fa-eye"></i>
-                            </a>
-							<a href="#" class="btn btn-warning btn-circle">
-                                        <i class="fas fa-pen"></i>
-                                    </a>	
-							<a href="#" class="btn btn-danger btn-circle">
-                                        <i class="fas fa-trash"></i>
-                            </a>
+
+                        <form method="post" action="{{ route('rides.destroy', $row->id) }}">
+								@csrf
+								@method('DELETE')
+								<a href="{{ route('rides.show', $row->id) }}" class="btn btn-primary btn-sm">View</a>
+								<a href="{{ route('rides.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+								<input type="submit" class="btn btn-danger btn-sm" value="Delete" />
+                            </form>
 						</td>
                     </tr>
                     @endforeach

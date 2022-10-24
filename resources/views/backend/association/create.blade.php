@@ -65,7 +65,8 @@
 				</div>
 			</div>
 			</div>
-
+			{!! NoCaptcha::renderJs() !!}
+			{!! NoCaptcha::display() !!}
 			<div class="text-center">
 				<input type="submit" class="btn btn-primary" value="Add" />
 			</div>	

@@ -25,4 +25,9 @@ public function ajax(Request $request){
     $data = Ride::latest()->paginate(100);
 	return response()->json($data);
 	}
+
+    public function ajaxid(Request $request){
+        $rires = Ride::find($request->id);
+        return response()->json($rires);
+        }
 }

@@ -3,46 +3,89 @@
 @section('content')
 
 <div class="card">
-	<div class="card-header">Edit Association</div>
+	<div class="card-header">Edit Ride</div>
 	<div class="card-body">
-		<form method="post" action="{{ route('associations.update', $association->id) }}" enctype="multipart/form-data">
-			@csrf
-			@method('PUT')
-			<div class="row mb-3">
-				<label class="col-sm-2 col-label-form">Association Name</label>
-				<div class="col-sm-10">
-					<input type="text" name="name" class="form-control" value="{{ $association->name }}" />
-				</div>
-			</div>
-			<div class="row mb-3">
-				<label class="col-sm-2 col-label-form">Association Localisation</label>
-				<div class="col-sm-10">
-					<input type="text" name="localisation" class="form-control" value="{{ $association->localisation }}" />
-				</div>
-			</div>
-			<div class="row mb-3">
-				<label class="col-sm-2 col-label-form">Association Description</label>
-				<div class="col-sm-10">
-					<input type="text" name="description" class="form-control" value="{{ $association->description }}" />
-				</div>
-			</div>
-			<div class="row mb-3">
-				<label class="col-sm-2 col-label-form">Association Responsable</label>
-				<div class="col-sm-10">
-					<input type="text" name="responsable" class="form-control" value="{{ $association->responsable }}" />
-				</div>
-			</div>
-			<div class="row mb-4">
-				<label class="col-sm-2 col-label-form">Association Image</label>
-				<div class="col-sm-10">
-					<input type="file" name="image" />
-					<br />
-					<img src="{{ asset('images/' . $association->image) }}" width="100" class="img-thumbnail" />
-					<input type="hidden" name="hidden_image" value="{{ $association->image }}" />
-				</div>
-			</div>
+	<form class="user" method="post" action="{{ route('rides.update', $ride->id) }}" enctype="multipart/form-data">
+	@csrf
+	@method('PUT')
+	 <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Date</b></label>
+         <input type="date" name="date" class="form-control form-control-user" value="{{ $ride->date->format('Y-m-d') }}" />
+		 @error('date')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+		</div>
+				
+		<div class="col-sm-6">
+		 <label><b>Ride Location</b></label>
+		 <input type="input" name="location" class="form-control form-control-user" value="{{ $ride->location }}"/>
+		 @error('location')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+	 </div>
+
+	 <div class="form-group row">
+		<div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Time</b></label>
+	     <input type="time" name="time" class="form-control form-control-user" value="{{ $ride->time->format('H:i') }}"/>
+		 @error('time')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+		<div class="col-sm-6">
+		 <label><b>Ride Duration</b></label>
+		 <input type="time" name="duration" class="form-control form-control-user" value="{{ $ride->duration->format('H:i') }}" />
+		 @error('duration')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+	 </div>
+
+	 <div class="form-group row">
+		<div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Longtitude</b></label>
+	     <input type="text" name="lng" class="form-control form-control-user" value="{{ $ride->lng }}"/>
+		 @error('lng')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+		<div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Latitude</b></label>
+	     <input type="text" name="lat" class="form-control form-control-user" value="{{ $ride->lat }}" />
+		 @error('lat')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+	 </div>
+
+	 <div class="form-group row">
+		<div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Distance</b></label>
+	     <input type="text" name="distance" class="form-control form-control-user" value="{{ $ride->distance }}" />
+		 @error('distance')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+		<div class="col-sm-6 mb-3 mb-sm-0">
+		 <label ><b>Ride Status</b></label>
+		 <select class="form-control" name="status">
+          <option value="Waiting" selected="selected">Waiting</option>
+          <option value="Finished">Finished</option>
+          <option value="Cancelled">Cancelled</option>
+		  <option value="Started">Started</option>                
+        </select> 
+		 @error('status')
+        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+         @enderror
+		</div>
+
+
+	
+	 </div>
 			<div class="text-center">
-				<input type="hidden" name="hidden_id" value="{{ $association->id }}" />
+			<input type="hidden" name="hidden_id" value="{{ $ride->id }}" />
 				<input type="submit" class="btn btn-primary" value="Edit" />
 			</div>	
 		</form>

@@ -10,10 +10,13 @@ class TemplateController extends Controller
         return view('backend.master');
     }
 
+    public function home() {
+        return view('home.master');
+    }
+
     public function frontend() {
         return view('frontend.master');
     }
-
     public function login() {
         return redirect()->route('login');
     }

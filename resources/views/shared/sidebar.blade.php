@@ -25,19 +25,27 @@
 
 <!-- Nav Événements -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#"  data-target="#collapseTwo"
+    <a class="nav-link collapsed" href="{{ route('options.index') }}"  data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-users"></i>
-        <span> Cycling Users</span>
+        <i class="fas fa-fw fa-bicycle"></i>
+        <span>Bike Opions</span>
     </a>
 </li>
 
 
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#"  data-target="#collapseTwo"
+    <a class="nav-link collapsed" href="{{ route('evenements.index') }}"  data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-calendar"></i>
         <span> Cycling Events</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link collapsed" href="{{ route('reclamations.index') }}"  data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-calendar"></i>
+        <span> Cycling Claims</span>
     </a>
 </li>
 
@@ -59,25 +67,43 @@
     </div>
 </li>
 
-<!-- Nav Associations -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="{{ route('associations.index') }}" data-target="#collapsePages"
-        aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Cycling Associations </span>
+    <a class="nav-link collapsed" href="{{ route('plans.index') }}"  data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-calendar"></i>
+        <span> Cycling Plans</span>
     </a>
 </li>
 
+<!-- Nav Associations -->
+<!-- Nav Associations -->
+<li class="nav-item">
+<a class="nav-link collapsed" href="{{ route('associations.index') }}" data-toggle="collapse" data-target="#collapseUtilities"
+aria-expanded="true" aria-controls="collapseUtilities">
+<i class="fas fa-fw fa-folder"></i>
+<span>Cycling Associations</span>
+</a>
+<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+data-parent="#accordionSidebar">
+<div class="bg-white py-2 collapse-inner rounded">
+<h6 class="collapse-header">Association Management</h6>
+<a class="collapse-item" href="{{ route('associations.index') }}">Associations</a>
+<a class="collapse-item" href="{{ route('blogs.index') }}"> Cycling Blogs</a>
+</div>
+</div>
+</li>
+
+
 <!-- Nav Location -->
 <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="{{ route('locations.index') }}">
         <i class="fas fa-fw fa-credit-card"></i>
         <span> Cycling Rentals </span></a>
 </li>
 
 <!-- Nav Vélo -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="/bikes">
         <i class="fas fa-fw fa-bicycle"></i>
         <span> Cycling Bikes </span></a>
 </li>

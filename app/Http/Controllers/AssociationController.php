@@ -42,7 +42,9 @@ class AssociationController extends Controller
             'localisation'          =>  'required',
             'description'          =>  'required',
             'responsable'         =>  'required',
-            'image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
+            'image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            'g-recaptcha-response' => 'required|captcha'
+
         ]);
 
         $file_name = time() . '.' . request()->image->getClientOriginalExtension();
@@ -135,5 +137,42 @@ class AssociationController extends Controller
         $association->delete();
 
         return redirect()->route('associations.index')->with('success', 'Association Data deleted successfully');
+    }
+
+    /** 
+ * 
+ * 
+ *  Display a listing of the resource.
+ * @return \Illuminate\Http\Response
+*/
+public function association() {
+    $data = Association::latest()->paginate(9);
+
+    return view('frontend.association', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+}
+
+
+
+    /** 
+ * 
+ * 
+ *  Display a listing of the resource.
+ * @return \Illuminate\Http\Response
+*/
+public function associationdetails() {
+    $data = Association::latest()->paginate(9);
+
+    return view('frontend.association-details', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+}
+
+
+ /**
+     * Provision a new web server.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke()
+    {
+        // ...
     }
 }
