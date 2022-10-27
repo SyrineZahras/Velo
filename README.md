@@ -1,32 +1,30 @@
 # :bicyclist: Velo Laravel App
 <div id="top" align="center">
-  <img src="https://user-images.githubusercontent.com/78981558/195495941-1d475be4-4685-40ff-8f45-73826c94a391.png" width="170" height="170"/>
+  <img src="https://user-images.githubusercontent.com/78981558/195495941-1d475be4-4685-40ff-8f45-73826c94a391.png" width="160" height="160"/>
   <div id="badges">
 
    <a href="https://github.com/SyrineZahras/Velo/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/contributors/SyrineZahras/Velo.svg?style=for-the-badge"/>
   </a>
 
   <a href="https://github.com/SyrineZahras/Velo/issues">
-    <img src="https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/issues/SyrineZahras/Velo.svg?style=for-the-badge"/>
   </a>
 
   <a href="https://github.com/SyrineZahras/Velo/stargazers">
-    <img src="https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/stars/SyrineZahras/Velo.svg?style=for-the-badge"/>
   </a>
    <a href="https://github.com/SyrineZahras/Velo/network/members">
-      <img src="https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+      <img src="https://img.shields.io/github/forks/SyrineZahras/Velo.svg?style=for-the-badge"/>
     </a>
   </div>
-<h3 align="center">Velo Laravel App</h3>
+<h3 align="center">Velo Laravel App :bicyclist:</h3>
   
   <p align="center">
 This is the official Velo App documentation <br/>
-  </p>
- </div>
 
-  
-  
+  </p>
+ </div>  
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -36,7 +34,6 @@ This is the official Velo App documentation <br/>
       <a href="#-about-the-project">About The Project</a>
       <ul>
         <li><a href="#-project-main-features">Project Main Features</a></li>
-        <li><a href="#-project-technical-architecture">Project Technical Architecture</a></li>
         <li><a href="#-built-with">Built With</a></li>
       </ul>
     </li>
@@ -48,6 +45,7 @@ This is the official Velo App documentation <br/>
       </ul>
     </li>
     <li><a href="#-usage">Usage</a></li>
+    <li><a href="#-demo">Demo</a></li>
     <li><a href="#-roadmap">Roadmap</a></li>
     <li><a href="#-contributing">Contributing</a></li>
     <li><a href="#-contact">Contact</a></li>
@@ -55,8 +53,6 @@ This is the official Velo App documentation <br/>
 
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## 📃 About The Project
@@ -165,6 +161,12 @@ _In order to install the app you need to follow the instructions below :_
 | <img src="https://user-images.githubusercontent.com/78981558/197310463-8ec54d51-e8c7-479d-bf0e-c5671ee82b6a.png" width="900" height="300"/><br> **Rides Management**| <img src="https://user-images.githubusercontent.com/78981558/197310466-6c44e8f7-febc-4521-b14d-0779328d667d.png" width="900" height="300"/>  <br>**Rides Tracking**| 
 | <img src="https://user-images.githubusercontent.com/78981558/197310470-6b4b4f36-19a4-437d-8815-6b23176d424a.png" width="900" height="300"/><br> **Rides Tracking - 1**| <img src="https://user-images.githubusercontent.com/78981558/198311850-e98ce7a7-0ea7-4f23-8198-01076232220c.png" width="900" height="300"/>  <br>**Events Page**| 
 <img src="https://user-images.githubusercontent.com/78981558/198311389-81e3e2d6-29cf-43b6-a1cb-0fcd8cb0792b.png" width="900" height="300"/><br> **Associations Management**| <img src="https://user-images.githubusercontent.com/78981558/198311346-25ce0027-3491-40d6-8940-40c17c263c44.png" width="900" height="300"/>  <br>**Create an Association**| <img src="https://user-images.githubusercontent.com/78981558/198311459-99d2c146-93ad-442c-b8ad-dc4b9fd3f984.png" width="900" height="300"/><br> **Associations Management**| <img src="https://user-images.githubusercontent.com/78981558/198311676-50816f55-9f7f-4f6b-9f80-8555c3d3b8e2.png" width="900" height="300"/>  <br>**Create an Association**| 
+
+## 🌎 Demo
+  
+  https://user-images.githubusercontent.com/78981558/198382453-10693677-dd76-444c-a49c-b0f051741a8e.mp4
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
