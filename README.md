@@ -163,12 +163,9 @@ _In order to install the app you need to follow the instructions below :_
 | <img src="https://user-images.githubusercontent.com/78981558/197310603-ad1652dc-8424-4762-9957-cd6bf6b3261a.png" width="900" height="300"/><br> **Forget Password Page**| <img src="https://user-images.githubusercontent.com/78981558/197310609-5aab1819-bd01-4af6-ac0e-0d64e5339bee.png" width="900" height="300"/>  <br>**Home Page**| 
 | <img src="https://user-images.githubusercontent.com/78981558/197310419-c5d6f454-ca2a-48a9-a19a-d6e1ffb6c35c.png" width="900" height="300"/><br> **Dashboard**| <img src="https://user-images.githubusercontent.com/78981558/197310481-ab1a35db-f23a-4ba6-bd5a-73f7e7a30888.png" width="900" height="300"/>  <br>**User Profile Page**| 
 | <img src="https://user-images.githubusercontent.com/78981558/197310463-8ec54d51-e8c7-479d-bf0e-c5671ee82b6a.png" width="900" height="300"/><br> **Rides Management**| <img src="https://user-images.githubusercontent.com/78981558/197310466-6c44e8f7-febc-4521-b14d-0779328d667d.png" width="900" height="300"/>  <br>**Rides Tracking**| 
-| <img src="https://user-images.githubusercontent.com/78981558/197310470-6b4b4f36-19a4-437d-8815-6b23176d424a.png" width="900" height="300"/><br> **Rides Tracking - 1**| <img src="" width="20" height="20"/>  <br>**In progress**| 
-
+| <img src="https://user-images.githubusercontent.com/78981558/197310470-6b4b4f36-19a4-437d-8815-6b23176d424a.png" width="900" height="300"/><br> **Rides Tracking - 1**| <img src="https://user-images.githubusercontent.com/78981558/198311850-e98ce7a7-0ea7-4f23-8198-01076232220c.png" width="900" height="300"/>  <br>**Events Page**| 
+<img src="https://user-images.githubusercontent.com/78981558/198311389-81e3e2d6-29cf-43b6-a1cb-0fcd8cb0792b.png" width="900" height="300"/><br> **Associations Management**| <img src="https://user-images.githubusercontent.com/78981558/198311346-25ce0027-3491-40d6-8940-40c17c263c44.png" width="900" height="300"/>  <br>**Create an Association**| <img src="https://user-images.githubusercontent.com/78981558/198311459-99d2c146-93ad-442c-b8ad-dc4b9fd3f984.png" width="900" height="300"/><br> **Associations Management**| <img src="https://user-images.githubusercontent.com/78981558/198311676-50816f55-9f7f-4f6b-9f80-8555c3d3b8e2.png" width="900" height="300"/>  <br>**Create an Association**| 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 
 <!-- ROADMAP -->
 ## 🚩 Roadmap
@@ -186,7 +183,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 	- Password Confirmation
 	- Account mail verification
 
-- [ ] Phase 3 : CRUD Integration
+- [x] Phase 3 : CRUD Integration
   - Bikes Management 
   - Bike Rentals Management
   - Bike Associations Management
