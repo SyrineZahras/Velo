@@ -139,12 +139,15 @@ _In order to install the app you need to follow the instructions below :_
    ```sh
    php composer migrate
    ```
-   
-9. Run the server on 
+9. Link the storage file public/storage with storage
    ```sh
-   php composer serve
+   php artisan storage:link
    ```
-10. Open localhost:8000 in the browser and that's it you can enjoy the project 🎉!
+10. Run the server on 
+   ```sh
+   php artisan serve
+   ```
+11. Open localhost:8000 in the browser and that's it you can enjoy the project 🎉!
 
  
 
